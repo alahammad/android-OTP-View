@@ -5,5 +5,6 @@
     <attr name="android:textColor" />
     <attr name="text_background_color" format="color" />
     <attr name="otp" format="string"/>
+    <attr name="otp_number" format="integer"/>
   </declare-styleable>
 </resources>
