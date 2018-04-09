@@ -3,11 +3,14 @@ package com.alahammad.sample;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.alahammad.otp_view.OtpView;
 
 public class MainActivity extends AppCompatActivity {
     OtpView otpView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +23,12 @@ public class MainActivity extends AppCompatActivity {
                otpView.enableKeypad();
            }
        },200);
+
+        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                otpView.getOTP();
+            }
+        });
     }
 }
