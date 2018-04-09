@@ -53,29 +53,23 @@ public class OtpView extends LinearLayout {
 
         int otpCount = styles.getInt(R.styleable.OtpView_otp_number, 5);
         for (int i = 0; i < otpCount; i++) {
-            EditText editText = createEditText();
+            EditText editText = createEditText(i);
             otpViews.add(editText);
             addView(editText);
         }
-
-//        mOtpOneField = (EditText) findViewById(R.id.otp_one_edit_text);
-//        mOtpTwoField = (EditText) findViewById(R.id.otp_two_edit_text);
-//        mOtpThreeField = (EditText) findViewById(R.id.otp_three_edit_text);
-//        mOtpFourField = (EditText) findViewById(R.id.otp_four_edit_text);
-
-
         styleEditTexts(styles);
         styles.recycle();
     }
 
 
-    private EditText createEditText() {
+    private EditText createEditText(int i) {
         EditText editText = new EditText(getContext());
         editText.setHeight(getResources().getDimensionPixelSize(R.dimen.otp_size));
         editText.setWidth(getResources().getDimensionPixelSize(R.dimen.otp_size));
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         lp.setMargins(0, 0, 16, 0);
         lp.gravity = Gravity.CENTER;
+        editText.setId(i);
 
         editText.setLayoutParams(lp);
         editText.setGravity(Gravity.CENTER);
@@ -184,7 +178,7 @@ public class OtpView extends LinearLayout {
 
             EditText left ;
             if (i==0){
-                left = otpViews.get(i);
+                left = otpViews.get(0);
             }else if (i<otpViews.size()-1){
                 left = otpViews.get(i+1);
             }else{
