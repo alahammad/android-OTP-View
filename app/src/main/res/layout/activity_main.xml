@@ -22,7 +22,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.13999999"
-        app:otp_number="2" />
+        app:otp_number="4" />
 
     <Button
         android:id="@+id/button"

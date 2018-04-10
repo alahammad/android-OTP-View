@@ -20,6 +20,18 @@ Add the dependency
 	        compile 'com.github.alahammad:android-OTP-View:v1.0.0'
 	}
 
+Then add this code to your layout
+
+        <com.alahammad.otp_view.OtpView
+        android:id="@+id/otp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:inputType="number"
+        app:otp_number="4" />
 
 ## License
 Copyright 2018 Ala Hammad
