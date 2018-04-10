@@ -92,10 +92,6 @@ public class OtpView extends LinearLayout {
      */
     private String makeOTP() {
         StringBuilder stringBuilder = new StringBuilder();
-//        stringBuilder.append(mOtpOneField.getText().toString());
-//        stringBuilder.append(mOtpTwoField.getText().toString());
-//        stringBuilder.append(mOtpThreeField.getText().toString());
-//        stringBuilder.append(mOtpFourField.getText().toString());
         for (EditText otpEditText : otpViews) {
             stringBuilder.append(otpEditText.getText().toString());
         }
@@ -126,7 +122,7 @@ public class OtpView extends LinearLayout {
      * @param otp Send the four digit otp
      */
     public void setOTP(String otp) {
-        if (otp.length() != otpViews.size()-1) {
+        if (otp.length() != otpViews.size() - 1) {
             Log.e("OTPView", "Invalid otp param");
             return;
         }
@@ -135,10 +131,6 @@ public class OtpView extends LinearLayout {
             Log.e("OTPView", "OTP doesn't match INPUT TYPE");
             return;
         }
-//        mOtpOneField.setText(String.valueOf(otp.charAt(0)));
-//        mOtpTwoField.setText(String.valueOf(otp.charAt(1)));
-//        mOtpThreeField.setText(String.valueOf(otp.charAt(2)));
-//        mOtpFourField.setText(String.valueOf(otp.charAt(3)));
         for (int i = 0; i < otpViews.size(); i++) {
             otpViews.get(i).setText(String.valueOf(otp.charAt(i)));
         }
@@ -150,42 +142,29 @@ public class OtpView extends LinearLayout {
                 styles.getColor(R.styleable.OtpView_text_background_color, Color.TRANSPARENT);
         if (styles.getColor(R.styleable.OtpView_text_background_color, Color.TRANSPARENT)
                 != Color.TRANSPARENT) {
-//            mOtpOneField.setBackgroundColor(backgroundColor);
-//            mOtpTwoField.setBackgroundColor(backgroundColor);
-//            mOtpThreeField.setBackgroundColor(backgroundColor);
-//            mOtpFourField.setBackgroundColor(backgroundColor);
             for (EditText otpEditText : otpViews) {
                 otpEditText.setBackgroundColor(backgroundColor);
             }
         } else {
-//            mOtpOneField.getBackground().mutate().setColorFilter(textColor, PorterDuff.Mode.SRC_ATOP);
-//            mOtpTwoField.getBackground().mutate().setColorFilter(textColor, PorterDuff.Mode.SRC_ATOP);
-//            mOtpThreeField.getBackground().mutate().setColorFilter(textColor, PorterDuff.Mode.SRC_ATOP);
-//            mOtpFourField.getBackground().mutate().setColorFilter(textColor, PorterDuff.Mode.SRC_ATOP);
             for (EditText otpEditText : otpViews) {
                 otpEditText.getBackground().mutate().setColorFilter(textColor, PorterDuff.Mode.SRC_ATOP);
             }
         }
-//        mOtpOneField.setTextColor(textColor);
-//        mOtpTwoField.setTextColor(textColor);
-//        mOtpThreeField.setTextColor(textColor);
-//        mOtpFourField.setTextColor(textColor);
         for (int i = 0; i < otpViews.size(); i++) {
 
             otpViews.get(i).setTextColor(textColor);
             EditText next = i < otpViews.size() ? otpViews.get(otpViews.size() - 1) : otpViews.get(i + 1);
             otpViews.get(i).setNextFocusRightId(next.getId());
 
-            EditText left ;
-            if (i==0){
+            EditText left;
+            if (i == 0) {
                 left = otpViews.get(0);
-            }else if (i<otpViews.size()-1){
-                left = otpViews.get(i+1);
-            }else{
+            } else if (i < otpViews.size() - 1) {
+                left = otpViews.get(i + 1);
+            } else {
                 left = otpViews.get(i);
             }
             otpViews.get(i).setNextFocusLeftId(left.getId());
-//                    otpViews.get(i).get(editText);
         }
         setEditTextInputStyle(styles);
     }
@@ -193,19 +172,12 @@ public class OtpView extends LinearLayout {
     private void setEditTextInputStyle(TypedArray styles) {
         int inputType =
                 styles.getInt(R.styleable.OtpView_android_inputType, EditorInfo.TYPE_TEXT_VARIATION_NORMAL);
-//        mOtpOneField.setInputType(inputType);
-//        mOtpTwoField.setInputType(inputType);
-//        mOtpThreeField.setInputType(inputType);
-//        mOtpFourField.setInputType(inputType);
+
         for (EditText otpEditText : otpViews) {
             otpEditText.setInputType(inputType);
         }
         String text = styles.getString(R.styleable.OtpView_otp);
         if (!TextUtils.isEmpty(text) && text.length() == otpViews.size() - 1) {
-//            mOtpOneField.setText(String.valueOf(text.charAt(0)));
-//            mOtpTwoField.setText(String.valueOf(text.charAt(1)));
-//            mOtpThreeField.setText(String.valueOf(text.charAt(2)));
-//            mOtpFourField.setText(String.valueOf(text.charAt(3)));
             for (int i = 0; i < otpViews.size(); i++) {
                 otpViews.get(i).setText(String.valueOf(text.charAt(i)));
             }
@@ -223,11 +195,6 @@ public class OtpView extends LinearLayout {
                 mCurrentlyFocusedEditText.setSelection(mCurrentlyFocusedEditText.getText().length());
             }
         };
-//        mOtpOneField.setOnFocusChangeListener(onFocusChangeListener);
-//        mOtpTwoField.setOnFocusChangeListener(onFocusChangeListener);
-//        mOtpThreeField.setOnFocusChangeListener(onFocusChangeListener);
-//        mOtpFourField.setOnFocusChangeListener(onFocusChangeListener);
-
         for (EditText otpEditText : otpViews) {
             otpEditText.setOnFocusChangeListener(onFocusChangeListener);
         }
@@ -246,10 +213,6 @@ public class OtpView extends LinearLayout {
                 return true;
             }
         };
-//        mOtpOneField.setOnTouchListener(touchListener);
-//        mOtpTwoField.setOnTouchListener(touchListener);
-//        mOtpThreeField.setOnTouchListener(touchListener);
-//        mOtpFourField.setOnTouchListener(touchListener);
         for (EditText otpEdittext : otpViews) {
             otpEdittext.setOnTouchListener(touchListener);
         }
@@ -262,10 +225,6 @@ public class OtpView extends LinearLayout {
                 return false;
             }
         };
-//        mOtpOneField.setOnTouchListener(touchListener);
-//        mOtpTwoField.setOnTouchListener(touchListener);
-//        mOtpThreeField.setOnTouchListener(touchListener);
-//        mOtpFourField.setOnTouchListener(touchListener);
         for (EditText otpEdittext : otpViews) {
             otpEdittext.setOnTouchListener(touchListener);
         }
@@ -312,10 +271,6 @@ public class OtpView extends LinearLayout {
                 }
             }
         };
-//        mOtpOneField.addTextChangedListener(textWatcher);
-//        mOtpTwoField.addTextChangedListener(textWatcher);
-//        mOtpThreeField.addTextChangedListener(textWatcher);
-//        mOtpFourField.addTextChangedListener(textWatcher);
         for (EditText otpEditext : otpViews) {
             otpEditext.addTextChangedListener(textWatcher);
         }
