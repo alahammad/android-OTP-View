@@ -14,7 +14,7 @@ import android.support.v4.content.ContextCompat;
  */
 
 public class SmsVerifyCatcher {
-    private final static int PERMISSION_REQUEST_CODE = 12;
+    private final static int PERMISSION_REQUEST_CODE = 1;
 
     private Activity activity;
     private Fragment fragment;
