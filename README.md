@@ -1,6 +1,10 @@
 ## OTP-View
 Alot of OTP-View for android but this library to make your life easy, i merge otp-view with sms catcher in single library, feel free to use it.
 
+![alt text](https://raw.githubusercontent.com/alahammad/android-OTP-View/master/screenshots/otp.png)
+
+![alt text](https://raw.githubusercontent.com/alahammad/android-OTP-View/master/screenshots/smscatcher.png)
+
 ## Code Example
 You can find example code to how to use it in simple way.
 
