@@ -17,7 +17,7 @@ Add it in your root build.gradle at the end of repositories:
 Add the dependency
 
 	dependencies {
-	        compile 'com.github.alahammad:android-OTP-View:v1.0.0'
+	        compile 'com.github.alahammad:android-OTP-View:{Release version}'
 	}
 
 Then add this code to your layout
