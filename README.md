@@ -5,7 +5,20 @@ Alot of OTP-View for android but this library to make your life easy, i merge ot
 You can find example code to how to use it in simple way.
 
 ## Installation
+Add it in your root build.gradle at the end of repositories:
 
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+
+Add the dependency
+
+	dependencies {
+	        compile 'com.github.alahammad:android-OTP-View:v1.0.0'
+	}
 
 
 ## License
