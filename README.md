@@ -1,3 +1,14 @@
+##OTP-View
+Alot of OTP-View for android but this library to make your life easy, i merge otp-view with sms catcher in single library, feel free to use it.
+
+## Code Example
+You can find example code to how to use it in simple way.
+
+## Installation
+
+
+
+## License
 Copyright 2018 Ala Hammad
 
 Licensed under the Apache License, Version 2.0 (the "License");
