@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.alahammad.otp_view.OTPListener;
 import com.alahammad.otp_view.OtpView;
@@ -15,24 +16,21 @@ public class MainActivity extends AppCompatActivity implements OTPListener, OnSm
     OtpView otpView;
     SmsVerifyCatcher smsVerifyCatcher;
 
+    private TextView mOtpTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mOtpTextView = findViewById(R.id.tv_otp);
         otpView = findViewById(R.id.otp);
+        otpView.setOnOtpFinished(this);
         smsVerifyCatcher = new SmsVerifyCatcher(this, this);
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                otpView.getOTP();
-            }
-        });
-
     }
 
     @Override
     public void otpFinished(String otp) {
-        Log.d("otpSample", otp);
+
     }
 
     @Override
@@ -56,6 +54,6 @@ public class MainActivity extends AppCompatActivity implements OTPListener, OnSm
 
     @Override
     public void onSmsCatch(String message) {
-        Log.d("otpSample", message);
+        mOtpTextView.setText(message);
     }
 }

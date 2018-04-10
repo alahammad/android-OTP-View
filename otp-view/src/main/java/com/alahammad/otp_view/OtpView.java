@@ -153,7 +153,14 @@ public class OtpView extends LinearLayout {
         for (int i = 0; i < otpViews.size(); i++) {
 
             otpViews.get(i).setTextColor(textColor);
-            EditText next = i < otpViews.size() ? otpViews.get(otpViews.size() - 1) : otpViews.get(i + 1);
+            EditText next;
+            if (i==0){
+                next = otpViews.get(i+1);
+            }else if (i<otpViews.size()-1){
+                next = otpViews.get(i + 1);
+            }else {
+                next = otpViews.get(otpViews.size()-1);
+            }
             otpViews.get(i).setNextFocusRightId(next.getId());
 
             EditText left;
