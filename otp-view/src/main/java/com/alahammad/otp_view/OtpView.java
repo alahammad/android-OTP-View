@@ -122,7 +122,7 @@ public class OtpView extends LinearLayout {
      * @param otp Send the four digit otp
      */
     public void setOTP(String otp) {
-        if (otp.length() != otpViews.size() - 1) {
+        if (otp.length() != otpViews.size()) {
             Log.e("OTPView", "Invalid otp param");
             return;
         }
